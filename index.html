@@ -1,0 +1,32 @@
+<html> 
+<head> 
+ <title>eWorky api</title> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+</head> 
+<body> 
+
+<script> 
+	function getLocalisationLinkHTML(localisation) {
+		return '<li><a href=' + localisation.url + '>' + localisation.name + '</a></li>';
+	}
+	
+	function renderLocalisations(data){
+		$.each(data.response, function (i, localisation) {
+				var htmlToAdd = getLocalisationLinkHTML(localisation);
+				$('#localisations').append(htmlToAdd);
+		});
+	}
+
+	var path = "http://www.eworky.com/api/localisation/search?";
+
+	var queryParams = ['place=paris', 'jsoncallback=?']; // "jsoncallback=?" to do cross sites javascript calls (to use JSONP)
+	var query = queryParams.join('&');
+	var url = path + query;
+	
+	$.getJSON(url, renderLocalisations);
+</script>
+<h1>Localisations in Paris:</h1>
+<ul id="localisations"></ul> 
+</body>
+
+</html>
