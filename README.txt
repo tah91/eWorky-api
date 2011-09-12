@@ -1,0 +1,1 @@
+Here you can find two samples for eworky api : one html (using json output) and one android (using xml output)
