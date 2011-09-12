@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Eworky_sampleActivity!</string>
+    <string name="app_name">Eworky_sample</string>
+    <string name="search">Search</string>
+    <string name="no_loc_found">rien trouvé</string>
+</resources>
